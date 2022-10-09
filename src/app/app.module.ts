@@ -6,6 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomepageComponent } from './header/homepage/homepage.component';
 import { ProductListComponent } from './header/product-list/product-list.component';
 import { FilterByComponent } from './header/product-list/filter-by/filter-by.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { FilterByComponent } from './header/product-list/filter-by/filter-by.com
     FilterByComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-//may need to add angular router afeter all
