@@ -1,2 +1,7 @@
-<p>product-page works!</p>
+<div *ngFor="let part of receivedProduct | keyvalue">
+    <p>{{ part.key }}</p>
+    <p>{{ part.value }}</p>
+</div> 
+
+<div>This is the product-page.</div>
 
