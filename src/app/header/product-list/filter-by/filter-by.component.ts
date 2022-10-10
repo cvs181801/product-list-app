@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-filter-by',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-by.component.css']
 })
 export class FilterByComponent implements OnInit {
-
+  @Input() receivedProductList: string;
   constructor() { }
 
   ngOnInit(): void {
