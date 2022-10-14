@@ -1,12 +1,28 @@
-<app-filter-by></app-filter-by>
+<!-- <app-filter-by></app-filter-by> -->
+
+<form>
+    <input 
+        placeholder="search by product name" 
+        type="text"
+        class="form-control"
+        (input)="onUpdateSearchString($event)" 
+    >
+    <button onClick="onSubmitSearch()">Search</button>
+</form>
+<p>{{searchString}}</p>
+
     <div *ngFor="let product of products">
         <a routerLink="/product-page" routerLinkActive="active" ariaCurrentWhenActive="page">
             {{product.Name}}
         </a>
         <p>{{product.Code}}</p>
         <p>{{product.Available}}</p>
-        <app-product-page [receivedProduct] = "product"></app-product-page>
+        <app-product-page [receivedProduct] = "product"></app-product-page> 
     </div>
-<!-- <app-product-page *ngFor="let product of products">
-    <p [receivedProduct] = "product"></p>
-</app-product-page> -->
+
+    <h2>TestARR!</h2>
+        <div *ngFor="let item of testArr">
+            
+            <p>{{item}}</p>
+        </div>
+

@@ -8,6 +8,7 @@ import { ProductListComponent } from './header/product-list/product-list.compone
 import { FilterByComponent } from './header/product-list/filter-by/filter-by.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { ProductPageComponent } from './header/product-list/product-page/product-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     HomepageComponent,
     ProductListComponent,
-    FilterByComponent
+    FilterByComponent,
+    ProductPageComponent
   ],
   imports: [
     BrowserModule,
