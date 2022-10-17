@@ -34,16 +34,17 @@ export class ProductListComponent implements OnInit {
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.testArr)
     this.route.params.subscribe(params => {
-      if (params.searchString) {
-        //this.newArr = this.newArr.push(products)
-        //grab the product that matches the search string ane push it into new arr
+      console.log('params.searchTerm', params.searchTerm)
+      if (params.searchTerm) {
+        // this.products.forEach(product => {
+        //   product.Name.toLowerCase().includes(params.searchTerm.toLowerCase()) ? this.testArr.push(product) : this.testArr.push({}) ; 
+        // })
+        this.testArr = this.products.filter(product => product.Name.toLowerCase().includes(params.searchTerm.toLowerCase()))
       } else {
-        //just show all products as default
+        this.testArr = this.products;
       }
     })
   }
 
 }
-//for each product, render details to product list, and create it's own page with it's own route. ?? is this possible???

@@ -9,6 +9,7 @@ import { FilterByComponent } from './header/product-list/filter-by/filter-by.com
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProductPageComponent } from './header/product-list/product-page/product-page.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductPageComponent } from './header/product-list/product-page/product
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

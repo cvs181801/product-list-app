@@ -1,9 +1,17 @@
+<div>This is the product-page.</div>
 
-
-<div *ngFor="let part of receivedProduct | keyvalue">
+<!-- <div *ngFor="let part of receivedProducts | keyvalue">
     <p>{{ part.key }}</p>
     <p>{{ part.value }}</p>
-</div> 
+</div>  -->
 
-<div>This is the product-page.</div>
+<div
+    *ngFor="let product of receivedProducts"
+>
+    <p>{{product.Name}}</p>
+    <p>{{product.Code}}</p>
+    <p>{{product.Available}}</p>
+</div>
+
+
 

@@ -1,6 +1,6 @@
 <!-- <app-filter-by></app-filter-by> -->
 
-<form>
+<!-- <form>
     <input 
         placeholder="search by product name" 
         type="text"
@@ -9,20 +9,23 @@
     >
     <button onClick="onSubmitSearch()">Search</button>
 </form>
-<p>{{searchString}}</p>
+<p>{{searchString}}</p> -->
 
-    <div *ngFor="let product of products">
-        <a routerLink="/product-page" routerLinkActive="active" ariaCurrentWhenActive="page">
+    <app-filter-by></app-filter-by>
+    <div *ngFor="let product of testArr">
+        <!-- <a routerLink="/product-page" routerLinkActive="active" ariaCurrentWhenActive="page">
             {{product.Name}}
-        </a>
+        </a> -->
+        <p>{{product.Name}}</p>
         <p>{{product.Code}}</p>
         <p>{{product.Available}}</p>
-        <app-product-page [receivedProduct] = "product"></app-product-page> 
+        
     </div>
 
-    <h2>TestARR!</h2>
+    <!-- <app-product-page [receivedProducts] = "testArr"></app-product-page>   -->
+    <!-- <h2>TestARR!</h2>
         <div *ngFor="let item of testArr">
             
             <p>{{item}}</p>
-        </div>
+        </div> -->
 
