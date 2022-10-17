@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //import Products from '../../../products';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -21,18 +22,27 @@ export class ProductListComponent implements OnInit {
 
   onUpdateSearchString(event: any){
     this.searchString = (<HTMLInputElement>event.target).value.toLowerCase();
-   
   }
 
   onSubmitSearch(){
     this.products.forEach(product => {
-      product.Name.toLowerCase().includes(this.searchString) ? this.testArr.push('yuep') : this.testArr.push('nada') ;
+      product.Name.toLowerCase().includes(this.searchString.toLowerCase()) ? this.testArr.push('yuep') : this.testArr.push('nada') ;
+      
     })
   }
 
-  constructor() { }
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.testArr)
+    this.route.params.subscribe(params => {
+      if (params.searchString) {
+        //this.newArr = this.newArr.push(products)
+        //grab the product that matches the search string ane push it into new arr
+      } else {
+        //just show all products as default
+      }
+    })
   }
 
 }
