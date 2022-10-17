@@ -28,9 +28,9 @@
     >
 
     <p>{{product.Name}}</p>
-    <p>{{product.Code}}</p>
+    <p>{{product.Code | convertToSpaces:'-'}}</p>
     <p>{{product.Available}}</p>
-    <p>${{product.Price}} USD</p> 
+    <p>{{product.Price | currency:'USD':'symbol':'1.2-2'}}</p> 
     <p>{{product.Stars}}</p>    
 </div>
 

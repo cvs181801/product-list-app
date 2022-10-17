@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProductPageComponent } from './header/product-list/product-page/product-page.component';
 import { FormsModule } from '@angular/forms';
+import { ConvertToSpacesPipe } from './header/product-list/convert-to-spaces.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     HomepageComponent,
     ProductListComponent,
     FilterByComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,
