@@ -15,7 +15,7 @@
 <br/>
 <br/>
 <button (click)="toggleImg()">Show Product Images</button>
-<div *ngFor="let product of testArr">
+<div *ngFor="let product of newProductsArr">
         <a [routerLink]="['/product-page', product.Index]" routerLinkActive="active" ariaCurrentWhenActive="page">  
             {{product.Name}}
         </a> 
