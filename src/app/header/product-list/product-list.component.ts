@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   searchString: string = 'search by product name';
   newProductsArr = [];
   showProductImg = false;
+  displayBtnText: string = 'Show Product Images';
 
   private _listFilter: string = ''; //instead of using params.searchTerm to create a list search feature, you can use a getter and setter.
   get listFilter(): string {
@@ -47,8 +48,10 @@ export class ProductListComponent implements OnInit {
   toggleImg() {
     if(this.showProductImg) {
       this.showProductImg = false;
+      this.displayBtnText = 'Show Product Images';
     } else {
       this.showProductImg = true;
+      this.displayBtnText = 'Hide Product Images';
     }
   }
 

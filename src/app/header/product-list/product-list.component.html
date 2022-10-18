@@ -14,34 +14,29 @@
 <app-filter-by></app-filter-by>
 <br/>
 <br/>
-<button (click)="toggleImg()">Show Product Images</button>
-<div *ngFor="let product of newProductsArr">
-        <a [routerLink]="['/product-page', product.Index]" routerLinkActive="active" ariaCurrentWhenActive="page">  
-            {{product.Name}}
-        </a> 
-    <img 
-        *ngIf="showProductImg" 
-        src="{{product.Image}}"
-        alt="product-image" 
-        class="image-responsive" 
-        style="max-height: 400px;"
-    >
+<button (click)="toggleImg()" type="button" class="btn btn-primary" [innerText]="displayBtnText"></button>
+<div 
+    *ngFor="let product of newProductsArr"
+    class="card"
+    style="width: 22rem;"
+>
+    <div class="card-body">
+            <a [routerLink]="['/product-page', product.Index]" routerLinkActive="active" ariaCurrentWhenActive="page">  
+                {{product.Name}}
+            </a> 
+            <br/>
+        <img 
+            *ngIf="showProductImg" 
+            src="{{product.Image}}"
+            alt="product-image" 
+            class="image-responsive" 
+            style="max-height: 400px; max-width: 33vw"
+        >
 
-    <!-- <p>{{product.Name}}</p> -->
-    <p>{{product.Code | convertToSpaces:'-'}}</p>
-    <p>{{product.Available}}</p>
-    <p>{{product.Price | currency:'USD':'symbol':'1.2-2'}}</p> 
-    <p>{{product.Stars}}</p>    
+        <p>{{product.Code | convertToSpaces:'-'}}</p>
+        <p>{{product.Available}}</p>
+        <p>{{product.Price | currency:'USD':'symbol':'1.2-2'}}</p> 
+        <p>{{product.Stars}}</p>  
+    </div>  
 </div>
 
-    <!-- <app-product-page [receivedProducts] = "testArr"></app-product-page>   -->
-    <!-- <h2>TestARR!</h2>
-        <div *ngFor="let item of testArr">
-            
-            <p>{{item}}</p>
-        </div> -->
-
-        <!-- <p *ngIf="serverCreated; else noServer">Server created!  Server name is {{serverName}}</p> ngIf is dependent on any condition returning / resolving to true or false-->
-        <!---<ng-template #noServer> ng-template is a directive template that comes with angular. the #noServer is a local marker used for this conditional render in tandem w ngIf.
-            <p>No server was created.</p>
-        </ng-template> -->
