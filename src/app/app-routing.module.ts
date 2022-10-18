@@ -8,7 +8,7 @@ import { ProductPageComponent } from './header/product-list/product-page/product
 const routes : Routes = [
     { path: 'homepage', component: HomepageComponent },
     { path: 'product-list', component: ProductListComponent },
-    //{ path: 'product-page', component: ProductPageComponent},
+    { path: 'product-page/:Index', component: ProductPageComponent},
     { path: 'search/:searchTerm', component: ProductListComponent}
 ];
 

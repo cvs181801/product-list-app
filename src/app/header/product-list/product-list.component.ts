@@ -12,8 +12,17 @@ export class ProductListComponent implements OnInit {
   testArr = [];
   showProductImg = false;
 
+  private _listFilter: string = ''; //instead of using params.searchTerm to create a list search feature, you can use a getter and setter.
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    console.log('In setter', value);
+  }
+
   products: {Index: number, Image: string; Name: string; Code: string; Available: string; Price: number; Stars: number}[] = [
-    {Index: 1, Image: 'https://i.ebayimg.com/images/g/keMAAOSwiftgAT5r/s-l400.jpg', Name: 'Hot Pink Rubber Chicken (Blue Eyes)', Code: 'TBX-009', Available: 'May 1 2023', Price: 45, Stars: 4.5},
+    {Index: 1, Image: 'https://i.ebayimg.com/images/g/keMAAOSwiftgAT5r/s-l400.jpg', Name: 'Screaming Hot Pink Rubber Chicken', Code: 'TBX-009', Available: 'May 1 2023', Price: 45, Stars: 4.5},
     {Index: 2, Image: 'https://images.halloweencostumes.com/products/45818/1-1/boys-old-man-costume-kit.jpg', Name: 'Old Man Suit, Child Size', Code: 'GKD-3094', Available: 'Oct 13 2022', Price: 75, Stars: 5},
     {Index: 3, Image: 'https://www.whatech.com/images/featured/20075/roquefort-cheese.jpg', Name: 'Gourmet Fake Rocquefort Cheese', Code: 'VKD-443', Available: 'June 13 2022', Price: 15.505, Stars: 3.5},
     {Index: 4, Image: 'https://i5.walmartimages.com/asr/c6df344c-8925-40ab-a7a9-ca3e04fd4cd1_1.471ebf91a6d0c9e2adfbc82691d6b1e7.jpeg', Name: 'Inflatable Play Palace for Cats', Code: 'DQD-330', Available: 'Dec 1 2020', Price: 150, Stars: 2.9},
@@ -31,7 +40,6 @@ export class ProductListComponent implements OnInit {
     })
   }
 
-
   toggleImg() {
     if(this.showProductImg) {
       this.showProductImg = false;
@@ -46,14 +54,13 @@ export class ProductListComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.log('params.searchTerm', params.searchTerm)
       if (params.searchTerm) {
-        // this.products.forEach(product => {
-        //   product.Name.toLowerCase().includes(params.searchTerm.toLowerCase()) ? this.testArr.push(product) : this.testArr.push({}) ; 
-        // })
         this.testArr = this.products.filter(product => product.Name.toLowerCase().includes(params.searchTerm.toLowerCase()))
       } else {
         this.testArr = this.products;
       }
     })
+
+    this.listFilter = 'BOO'
   }
 
 }

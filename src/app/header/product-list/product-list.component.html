@@ -16,9 +16,9 @@
 <br/>
 <button (click)="toggleImg()">Show Product Images</button>
 <div *ngFor="let product of testArr">
-        <!-- <a routerLink="/product-page" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <a [routerLink]="['/product-page', product.Index]" routerLinkActive="active" ariaCurrentWhenActive="page">  
             {{product.Name}}
-        </a> -->
+        </a> 
     <img 
         *ngIf="showProductImg" 
         src="{{product.Image}}"
@@ -27,7 +27,7 @@
         style="max-height: 400px;"
     >
 
-    <p>{{product.Name}}</p>
+    <!-- <p>{{product.Name}}</p> -->
     <p>{{product.Code | convertToSpaces:'-'}}</p>
     <p>{{product.Available}}</p>
     <p>{{product.Price | currency:'USD':'symbol':'1.2-2'}}</p> 

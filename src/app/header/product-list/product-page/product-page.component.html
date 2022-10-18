@@ -1,16 +1,24 @@
-<div>This is the product-page.</div>
+
 
 <!-- <div *ngFor="let part of receivedProducts | keyvalue">
     <p>{{ part.key }}</p>
     <p>{{ part.value }}</p>
-</div>  -->
+</div>  this is if we were receiveing only one object, not an array of objects! this is how to iterate over an object-->
 
 <div
     *ngFor="let product of receivedProducts"
 >
-    <p>{{product.Name}}</p>
-    <p>{{product.Code}}</p>
+    <img 
+        src="{{product.Image}}"
+        alt="product-image" 
+        class="image-responsive" 
+        style="max-height: 400px;"
+    >
+    <p>{{product.Name}}</p> 
+    <p>{{product.Code | convertToSpaces:'-'}}</p>
     <p>{{product.Available}}</p>
+    <p>{{product.Price | currency:'USD':'symbol':'1.2-2'}}</p> 
+    <p>{{product.Stars}}</p> 
 </div>
 
 
