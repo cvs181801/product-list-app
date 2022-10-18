@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./filter-by.component.css']
 })
 export class FilterByComponent implements OnInit {
-  // @Input() receivedProductList: string;
   searchTerm: string = '';
 
   onUpdateSearchString(event: any){

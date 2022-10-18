@@ -13,5 +13,3 @@ export class HomepageComponent implements OnInit {
   }
 
 }
-
-//if home button clicked show home
