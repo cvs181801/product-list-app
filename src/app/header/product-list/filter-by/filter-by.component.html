@@ -3,5 +3,7 @@
         type="text"
         class="form-control"
         [(ngModel)]="searchTerm"
+        (change)="sendSearchString()"
+        #search
 >
 <button (click)="search()" type="button" class="btn btn-info">Search</button>

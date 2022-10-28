@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./filter-by.component.css']
 })
 export class FilterByComponent implements OnInit {
+  @Output() searchTermString =  new EventEmitter<string>(); //broad cast this from filter by to the parent, product list.
   searchTerm: string = '';
+
+  sendSearchString() {
+    this.searchTermString.emit(this.searchTerm)
+  }
 
   onUpdateSearchString(event: any){
     this.searchTerm = (<HTMLInputElement>event.target).value.toLowerCase();
@@ -21,7 +26,6 @@ export class FilterByComponent implements OnInit {
     }
   }
 
-
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -30,8 +34,6 @@ export class FilterByComponent implements OnInit {
         this.searchTerm = params.searchTerm;
       }
     })
-
-   
   }
 
 }
