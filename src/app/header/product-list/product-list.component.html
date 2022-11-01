@@ -1,9 +1,21 @@
-<app-filter-by></app-filter-by>
+<!-- <app-filter-by (searchTermString) = "getSearchInput($event)"></app-filter-by>  -->
+<!-- <app-filter-by></app-filter-by> -->
+
+<input 
+        placeholder="search by product name" 
+        type="text"
+        class="form-control"
+        [(ngModel)]="listFilter" 
+        
+        #search
+>
+<!-- <p>searchterm: {{listFilter}}</p> -->
+
 <br/>
 <br/>
 <button (click)="toggleImg()" type="button" class="btn btn-primary" [innerText]="displayBtnText"></button>
 <div 
-    *ngFor="let product of newProductsArr"
+    *ngFor="let product of filteredArr"
     class="card"
     style="width: 22rem;"
 >

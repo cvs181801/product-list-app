@@ -2,8 +2,15 @@
         placeholder="search by product name" 
         type="text"
         class="form-control"
-        [(ngModel)]="searchTerm"
-        (change)="sendSearchString()"
+        [(ngModel)]="searchTerm" 
+        
         #search
 >
-<button (click)="search()" type="button" class="btn btn-info">Search</button>
+<p>searchterm: {{searchTerm}}</p>
+<!-- <button 
+        (click)="search()" 
+        type="button" 
+        class="btn btn-info"
+>
+Search
+</button> -->

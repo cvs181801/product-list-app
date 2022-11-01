@@ -11,20 +11,22 @@ export class FilterByComponent implements OnInit {
   searchTerm: string = '';
 
   sendSearchString() {
+    //this.searchTerm = (<HTMLInputElement>event.target).value.toLowerCase();
+    //console.log('searchterm: ', this.searchTerm)
     this.searchTermString.emit(this.searchTerm)
   }
 
-  onUpdateSearchString(event: any){
-    this.searchTerm = (<HTMLInputElement>event.target).value.toLowerCase();
-  }
+  // onUpdateSearchString(event: any){
+  //   this.searchTerm = (<HTMLInputElement>event.target).value.toLowerCase();
+  // }
 
-  search(): void {
-    if(this.searchTerm) {
-      this.router.navigateByUrl('/search/' + this.searchTerm)
-    } else {
-      this.router.navigateByUrl('product-list')
-    }
-  }
+  // search(): void {
+  //   if(this.searchTerm) {
+  //     this.router.navigateByUrl('/search/' + this.searchTerm)
+  //   } else {
+  //     this.router.navigateByUrl('product-list')
+  //   }
+  // }
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -34,6 +36,7 @@ export class FilterByComponent implements OnInit {
         this.searchTerm = params.searchTerm;
       }
     })
+    //console.log('searchterm: ', this.searchTerm)
   }
 
 }
